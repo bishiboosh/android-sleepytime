@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sleepyti.me\nbedtime calculator</string>
+    <string name="wake_up">I have to wake up at</string>
+    <string name="hour">(hour)</string>
+    <string name="minute">(minute)</string>
+	<string-array name="ampm">
+		<item>AM</item>
+		<item>PM</item>
+	</string-array>
+    <string name="zzz">zzz</string>
+    <string name="bed_now">or, find out when\nto wake up if you go\nto bed now</string>
+</resources>
