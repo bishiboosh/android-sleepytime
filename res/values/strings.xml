@@ -10,4 +10,9 @@
 	</string-array>
     <string name="zzz">zzz</string>
     <string name="bed_now">or, find out when\nto wake up if you go\nto bed now</string>
+    <string name="results_wakeup">If you head to bed\nright now, you should try\nto wake up at one of the\nfollowing times:\n</string>
+    <string name="night_sleep">A good night\'s sleep\nconsists of 5-6 complete\nsleep cycles.</string>
+    <string name="results_asleep">You should try to go to\nabed at one of the\nfollowing times:</string>
+    <string name="sleep_cycles">sleepyti.me works by counting\nbackwards in sleep cycles.\nSleep cycles typically last\n90 minutes.\nWaking up in the middle\nof a sleep cycle leaves you\nfeeling tired and groggy,\nbut waking up in between\ncycles lets you wake up feeling\nrefreshed and alert!</string>
+    <string name="or">or</string>
 </resources>

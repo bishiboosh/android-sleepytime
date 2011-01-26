@@ -1,5 +1,18 @@
 package eu.sweetlygeek.sleepytime;
 
+/**
+ * Enum for AM/PM
+ * 
+ * @author bishiboosh
+ * 
+ */
 public enum MidDay {
-	AM, PM;
+	/**
+	 * Morning
+	 */
+	AM,
+	/**
+	 * Afternoon
+	 */
+	PM;
 }

@@ -1,11 +1,8 @@
 package eu.sweetlygeek.sleepytime;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
-
-import org.joda.time.LocalTime;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,29 +10,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+/**
+ * Default activity
+ * 
+ * @author bishiboosh
+ * 
+ */
 public class HomeActivity extends Activity {
-
-	private static final String MINUTE_PARAM = "minute";
-	private static final String HOUR_PARAM = "hour";
-	private static final DecimalFormat FORMATTER = new DecimalFormat("00");
-	private static final Locale LOCALE = Locale.getDefault();
-	private static final List<String> HOURS;
-	private static final List<String> MINUTES;
-	static {
-		int maxHours = LOCALE == Locale.FRENCH ? 24 : 12;
-		HOURS = new ArrayList<String>();
-		for (int i = 1; i <= maxHours; i++) {
-			HOURS.add(FORMATTER.format(i));
-		}
-		MINUTES = new ArrayList<String>();
-		for (int i = 0; i < 60; i++) {
-			MINUTES.add(FORMATTER.format(i));
-		}
-	}
 
 	private boolean hourChosen;
 	private boolean minuteChosen;
@@ -46,16 +30,29 @@ public class HomeActivity extends Activity {
 	private Spinner ampm;
 
 	/** Called when the activity is first created. */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		Locale locale = Locale.getDefault();
 		hourChosen = false;
 		minuteChosen = false;
 		hours = (Spinner) findViewById(R.id.hour);
-		ArrayAdapter<String> hAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, HOURS);
-		hAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		hours.setAdapter(hAdapter);
+		int min, max;
+		if (locale == Locale.FRENCH) {
+			is24h = true;
+			min = 0;
+			max = 23;
+		} else {
+			min = 1;
+			max = 12;
+		}
+		hours.setAdapter(SleepUtils.getIntAdapter(this, min, max));
 		hours.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -72,9 +69,7 @@ public class HomeActivity extends Activity {
 
 		});
 		minutes = (Spinner) findViewById(R.id.minute);
-		ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MINUTES);
-		mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		minutes.setAdapter(mAdapter);
+		minutes.setAdapter(SleepUtils.getIntAdapter(this, 0, 59));
 		minutes.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -105,19 +100,14 @@ public class HomeActivity extends Activity {
 			}
 
 		});
-		if (LOCALE == Locale.FRENCH) {
+		if (is24h)
 			ampm.setVisibility(View.GONE);
-			is24h = true;
-		}
 		Button zzz = (Button) findViewById(R.id.zzz);
 		zzz.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				LocalTime now = new LocalTime();
-				int hour = now.hourOfDay().get();
-				int minute = now.minuteOfHour().get();
-				goToNext(hour, minute);
+				goToNext(null, true);
 			}
 		});
 	}
@@ -133,12 +123,16 @@ public class HomeActivity extends Activity {
 			if (ampm == MidDay.PM)
 				hour += 12;
 		}
-		goToNext(hour, minute);
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR_OF_DAY, hour);
+		calendar.set(Calendar.MINUTE, minute);
+		goToNext(calendar.getTime(), false);
 	}
 
-	private void goToNext(int hour, int minute) {
-		Intent i = new Intent();
-		i.putExtra(HOUR_PARAM, hour);
-		i.putExtra(MINUTE_PARAM, minute);
+	private void goToNext(Date date, boolean sleepNow) {
+		Intent i = new Intent(this, ResultsActivity.class);
+		i.putExtra(SleepUtils.DATE_PARAM, date);
+		i.putExtra(SleepUtils.NOW_PARAM, sleepNow);
+		startActivity(i);
 	}
 }
