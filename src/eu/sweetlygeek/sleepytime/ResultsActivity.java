@@ -21,7 +21,8 @@ public class ResultsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.results);
-		boolean goToBedNow = savedInstanceState.getBoolean(SleepUtils.NOW_PARAM);
+		Bundle extras = getIntent().getExtras();
+		boolean goToBedNow = extras.getBoolean(SleepUtils.NOW_PARAM);
 		TextView text1 = (TextView) findViewById(R.id.text1_results);
 		TextView text2 = (TextView) findViewById(R.id.text2_results);
 		TextView text3 = (TextView) findViewById(R.id.text3_results);
@@ -32,7 +33,7 @@ public class ResultsActivity extends Activity {
 			text3.setText(R.string.night_sleep);
 		} else {
 			text1.setText(R.string.results_asleep);
-			Date date = (Date) savedInstanceState.getSerializable(SleepUtils.DATE_PARAM);
+			Date date = (Date) extras.getSerializable(SleepUtils.DATE_PARAM);
 			times = SleepUtils.getSleepingTimes(date);
 			text3.setText(R.string.sleep_cycles);
 		}

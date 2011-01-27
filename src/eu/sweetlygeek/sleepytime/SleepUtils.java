@@ -1,13 +1,9 @@
 package eu.sweetlygeek.sleepytime;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import android.content.Context;
-import android.widget.ArrayAdapter;
 
 /**
  * Utils for calculating sleep time
@@ -17,7 +13,9 @@ import android.widget.ArrayAdapter;
  */
 public final class SleepUtils {
 
+	/** Date param for extra */
 	public static final String DATE_PARAM = "date";
+	/** Now param for extra */
 	public static final String NOW_PARAM = "now";
 
 	private SleepUtils() {
@@ -60,25 +58,4 @@ public final class SleepUtils {
 		return result;
 	}
 
-	/**
-	 * Get an adapter with a list of "00" items.
-	 * 
-	 * @param context
-	 *            context
-	 * @param min
-	 *            minimum (inclusive)
-	 * @param max
-	 *            maximum (inclusive)
-	 * @return array adapter
-	 */
-	public static ArrayAdapter<String> getIntAdapter(Context context, int min, int max) {
-		DecimalFormat formatter = new DecimalFormat("00");
-		List<String> list = new ArrayList<String>();
-		for (int i = min; i <= max; i++) {
-			list.add(formatter.format(i));
-		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, list);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		return adapter;
-	}
 }

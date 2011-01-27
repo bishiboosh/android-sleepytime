@@ -2,12 +2,7 @@
 <resources>
     <string name="app_name">Sleepyti.me\nbedtime calculator</string>
     <string name="wake_up">I have to wake up at</string>
-    <string name="hour">(hour)</string>
-    <string name="minute">(minute)</string>
-	<string-array name="ampm">
-		<item>AM</item>
-		<item>PM</item>
-	</string-array>
+    <string name="choose_time">Choose wake-up time</string>
     <string name="zzz">zzz</string>
     <string name="bed_now">or, find out when\nto wake up if you go\nto bed now</string>
     <string name="results_wakeup">If you head to bed\nright now, you should try\nto wake up at one of the\nfollowing times:\n</string>
