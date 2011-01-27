@@ -55,7 +55,8 @@ public class HomeActivity extends Activity {
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 			case TIME_PICKER_DIALOG:
-				Locale locale = Locale.getDefault();
+				String language = Locale.getDefault().getLanguage();
+				boolean is24h = Locale.FRENCH.getLanguage().equals(language);
 				return new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
 
 					@Override
@@ -65,7 +66,7 @@ public class HomeActivity extends Activity {
 						calendar.set(Calendar.MINUTE, minute);
 						goToNext(calendar.getTime(), false);
 					}
-				}, 0, 0, locale == Locale.FRENCH);
+				}, 0, 0, is24h);
 		}
 		return null;
 	}
