@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -22,6 +23,7 @@ import android.widget.TimePicker;
 public class HomeActivity extends Activity {
 
 	private final static int TIME_PICKER_DIALOG = 0;
+	private final static int ABOUT_DIALOG = 1;
 
 	/** Called when the activity is first created. */
 	/*
@@ -49,6 +51,14 @@ public class HomeActivity extends Activity {
 				goToNext(null, true);
 			}
 		});
+		Button about = (Button) findViewById(R.id.about);
+		about.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				showDialog(ABOUT_DIALOG);
+			}
+		});
 	}
 
 	@Override
@@ -67,6 +77,8 @@ public class HomeActivity extends Activity {
 						goToNext(calendar.getTime(), false);
 					}
 				}, 0, 0, is24h);
+			case ABOUT_DIALOG:
+				return new AlertDialog.Builder(this).setTitle(R.string.about).setMessage(R.string.about_text).create();
 		}
 		return null;
 	}

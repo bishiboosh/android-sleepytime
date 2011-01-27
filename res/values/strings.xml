@@ -10,4 +10,6 @@
     <string name="results_asleep">You should try to go to bed at one of the following times:</string>
     <string name="sleep_cycles">sleepyti.me works by counting backwards in sleep cycles. Sleep cycles typically last 90 minutes, and the average human takes <b>14 minutes</b> to fall asleep.\n\nWaking up in the middle of a sleep cycle leaves you feeling tired and groggy, but waking up in between cycles lets you wake up feeling refreshed and alert!</string>
     <string name="or">or</string>
+    <string name="about">About this app</string>
+    <string name="about_text">Inspired by\n<a href="http://sleepyti.me">http://sleepyti.me</a>\nby <a href="mailto:dshaw@gmail.com">David Shaw</a></string>
 </resources>
