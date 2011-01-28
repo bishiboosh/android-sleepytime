@@ -5,6 +5,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import android.content.Context;
+
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 /**
  * Utils for calculating sleep time
  * 
@@ -17,8 +21,36 @@ public final class SleepUtils {
 	public static final String DATE_PARAM = "date";
 	/** Now param for extra */
 	public static final String NOW_PARAM = "now";
+	private static final String GA_CODE = "UA-3472709-8";
+	private static final GoogleAnalyticsTracker tracker = GoogleAnalyticsTracker.getInstance();
 
 	private SleepUtils() {
+	}
+
+	/**
+	 * Track a page access
+	 * 
+	 * @param context
+	 *            context
+	 */
+	public static void trackPage(Context context) {
+		tracker.start(GA_CODE, context);
+		tracker.trackPageView(context.getClass().getName());
+		tracker.stop();
+	}
+
+	/**
+	 * Track a button click
+	 * 
+	 * @param context
+	 *            context
+	 * @param buttonName
+	 *            name of the button
+	 */
+	public static void trackButton(Context context, String buttonName) {
+		tracker.start(GA_CODE, context);
+		tracker.trackEvent("Clicks", "Button", buttonName, 1);
+		tracker.stop();
 	}
 
 	/**

@@ -29,6 +29,7 @@ public class ResultsActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		SleepUtils.trackPage(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.results);
 		Bundle extras = getIntent().getExtras();
