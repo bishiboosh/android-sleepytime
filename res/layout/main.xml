@@ -14,7 +14,11 @@
 			android:text="@string/choose_time" android:layout_below="@+id/title"
 			android:layout_height="wrap_content" android:layout_centerInParent="true"
 			android:textSize="20dip" android:layout_marginBottom="20dip" />
-		<Button android:layout_below="@+id/choose_time"
+		<Button android:id="@+id/choose_bed_time" android:layout_width="wrap_content"
+			android:text="@string/choose_bed_time" android:layout_below="@+id/choose_time"
+			android:layout_height="wrap_content" android:layout_centerInParent="true"
+			android:textSize="20dip" android:layout_marginBottom="20dip" />
+		<Button android:layout_below="@+id/choose_bed_time"
 			android:layout_width="wrap_content" android:text="@string/zzz"
 			android:layout_height="wrap_content" android:id="@+id/zzz"
 			android:layout_centerInParent="true" android:textSize="20dip"

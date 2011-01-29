@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sleepyti.me bedtime calculator</string>
-    <string name="app_name_2_lines"><b>Sleepyti.me\nbedtime calculator</b></string>
+    <string name="app_name">Sleepyti.me</string>
+    <string name="app_name_2_lines"><b>Sleepyti.me</b></string>
     <string name="choose_time">Choose wake-up time</string>
+    <string name="choose_bed_time">Choose bedtime</string>
     <string name="zzz">Go to bed now</string>
-    <string name="bed_now">or, find out when to wake up if you goto bed now</string>
     <string name="results_wakeup">If you head to bed right now, you should try to wake up at one of the following times:</string>
+    <string name="results_wakeup_choose">You should try to wake up at one of the following times:</string>
     <string name="night_sleep">A good night\'s sleep consists of 5-6 complete sleep cycles.</string>
     <string name="results_asleep">You should try to go to bed at one of the following times:</string>
     <string name="sleep_cycles">sleepyti.me works by counting backwards in sleep cycles. Sleep cycles typically last 90 minutes, and the average human takes <b>14 minutes</b> to fall asleep.\n\nWaking up in the middle of a sleep cycle leaves you feeling tired and groggy, but waking up in between cycles lets you wake up feeling refreshed and alert!</string>

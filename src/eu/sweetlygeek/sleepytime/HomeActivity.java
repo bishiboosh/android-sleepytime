@@ -25,6 +25,8 @@ public class HomeActivity extends Activity {
 	private final static int TIME_PICKER_DIALOG = 0;
 	private final static int ABOUT_DIALOG = 1;
 
+	private Choice choice;
+
 	/** Called when the activity is first created. */
 	/*
 	 * (non-Javadoc)
@@ -43,6 +45,17 @@ public class HomeActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				SleepUtils.trackButton(HomeActivity.this, "Choose time");
+				choice = Choice.CHOOSE_WAKE;
+				showDialog(TIME_PICKER_DIALOG);
+			}
+		});
+		Button chooseBedTime = (Button) findViewById(R.id.choose_bed_time);
+		chooseBedTime.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				SleepUtils.trackButton(HomeActivity.this, "Choose bed time");
+				choice = Choice.CHOOSE_BED;
 				showDialog(TIME_PICKER_DIALOG);
 			}
 		});
@@ -52,7 +65,7 @@ public class HomeActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				SleepUtils.trackButton(HomeActivity.this, "Go to bed now");
-				goToNext(null, true);
+				goToNext(null, Choice.BED_NOW);
 			}
 		});
 		Button about = (Button) findViewById(R.id.about);
@@ -79,7 +92,7 @@ public class HomeActivity extends Activity {
 						Calendar calendar = Calendar.getInstance();
 						calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
 						calendar.set(Calendar.MINUTE, minute);
-						goToNext(calendar.getTime(), false);
+						goToNext(calendar.getTime(), choice);
 					}
 				}, 0, 0, is24h);
 			case ABOUT_DIALOG:
@@ -88,10 +101,10 @@ public class HomeActivity extends Activity {
 		return null;
 	}
 
-	private void goToNext(Date date, boolean sleepNow) {
+	private void goToNext(Date date, Choice choice) {
 		Intent i = new Intent(this, ResultsActivity.class);
 		i.putExtra(SleepUtils.DATE_PARAM, date);
-		i.putExtra(SleepUtils.NOW_PARAM, sleepNow);
+		i.putExtra(SleepUtils.CHOICE_PARAM, choice);
 		startActivity(i);
 	}
 }
