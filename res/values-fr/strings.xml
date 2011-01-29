@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sleepyti.me</string>
+    <string name="app_name_2_lines"><b>Sleepyti.me</b></string>
+    <string name="choose_time">Heure de réveil</string>
+    <string name="zzz">Aller au lit maintenant</string>
+    <string name="results_wakeup">Si vous allez au lit dès maintenant, vous devriez essayer de vous réveiller à l\'une des heures suivantes :</string>
+    <string name="night_sleep">Une bonne nuit de sommeil consiste en 5 ou 6 cycles de sommeil.</string>
+    <string name="results_asleep">Vous devriez essayer d\'aller au lit à l\'une des heures suivantes :</string>
+    <string name="sleep_cycles">sleepyti.me marche en comptant à l\'envers en cycles de sommeil. Un cycle de sommeil dure typiquement 90 minutes, et on met en moyenne <b>14 minutes</b> à s\'endormir.\n\nSe réveiller au milieu d\'un cycle vous laisse fatigué et groggy, alors que se réveiller entre deux cycles vous promet un matin alerte et en forme !</string>
+    <string name="or">ou</string>
+    <string name="about">À propos</string>
+    <string name="about_text">Inspiré par\n<a href="http://sleepyti.me">http://sleepyti.me</a>\npar <a href="mailto:dshaw@gmail.com">David Shaw</a></string>
+</resources>
