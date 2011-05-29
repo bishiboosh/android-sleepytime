@@ -35,8 +35,6 @@ public class HomeActivity extends Activity {
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		SleepUtils.trackPage(this);
-
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		Button chooseTime = (Button) findViewById(R.id.choose_time);
@@ -44,7 +42,6 @@ public class HomeActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				SleepUtils.trackButton(HomeActivity.this, "Choose time");
 				choice = Choice.CHOOSE_WAKE;
 				showDialog(TIME_PICKER_DIALOG);
 			}
@@ -54,7 +51,6 @@ public class HomeActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				SleepUtils.trackButton(HomeActivity.this, "Choose bed time");
 				choice = Choice.CHOOSE_BED;
 				showDialog(TIME_PICKER_DIALOG);
 			}
@@ -64,7 +60,6 @@ public class HomeActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				SleepUtils.trackButton(HomeActivity.this, "Go to bed now");
 				goToNext(null, Choice.BED_NOW);
 			}
 		});
@@ -73,7 +68,6 @@ public class HomeActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				SleepUtils.trackButton(HomeActivity.this, "About");
 				showDialog(ABOUT_DIALOG);
 			}
 		});

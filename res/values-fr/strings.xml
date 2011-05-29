@@ -13,4 +13,5 @@
     <string name="or">ou</string>
     <string name="about">À propos</string>
     <string name="about_text">Inspiré par\n<a href="http://sleepyti.me">http://sleepyti.me</a>\npar <a href="mailto:dshaw@gmail.com">David Shaw</a></string>
+    <string name="results_widget">Heures de réveil :</string>
 </resources>

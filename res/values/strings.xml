@@ -13,4 +13,5 @@
     <string name="or">or</string>
     <string name="about">About this app</string>
     <string name="about_text">Inspired by\n<a href="http://sleepyti.me">http://sleepyti.me</a>\nby <a href="mailto:dshaw@gmail.com">David Shaw</a></string>
+    <string name="results_widget">Wake-up hours:</string>
 </resources>
