@@ -70,7 +70,7 @@ public class HomeActivity extends Activity {
 			public void onClick(View v) {
 				showDialog(ABOUT_DIALOG);
 			}
-		});
+		}); 
 	}
 
 	@Override

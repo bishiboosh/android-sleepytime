@@ -12,6 +12,15 @@
     <string name="sleep_cycles">sleepyti.me marche en comptant à l\'envers en cycles de sommeil. Un cycle de sommeil dure typiquement 90 minutes, et on met en moyenne <b>14 minutes</b> à s\'endormir.\n\nSe réveiller au milieu d\'un cycle vous laisse fatigué et groggy, alors que se réveiller entre deux cycles vous promet un matin alerte et en forme !</string>
     <string name="or">ou</string>
     <string name="about">À propos</string>
+    <string name="author">Auteur : <a href="mailto:valentin.rocher@sweetlygeek.eu">Valentin Rocher</a></string>
     <string name="about_text">Inspiré par\n<a href="http://sleepyti.me">http://sleepyti.me</a>\npar <a href="mailto:dshaw@gmail.com">David Shaw</a></string>
     <string name="results_widget">Heures de réveil :</string>
+    <string name="add_alarm">Ajouter un réveil</string>
+    <string name="select_hour_title">Sélectionner heure de réveil</string>
+    <string name="select_hour_message">Sélectionnez l\'heure à laquelle le réveil sera réglé</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annuler</string>
+    <string name="no_alarm_title">Impossible de régler le réveil</string>
+    <string name="no_alarm_message">Vous n\'avez pas d\'application de réveil compatible avec cette application. Pour pouvoir créer un réveil automatique, vous devez télécharger une application compatible telle que <a href="https://market.android.com/details?id=com.vp.alarmClockPlusDock">Alarm Clock Plus</a></string>
+    <string name="download_alarm_app">Aller au market</string>
 </resources>
