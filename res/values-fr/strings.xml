@@ -21,6 +21,6 @@
     <string name="ok">Ok</string>
     <string name="cancel">Annuler</string>
     <string name="no_alarm_title">Impossible de régler le réveil</string>
-    <string name="no_alarm_message">Vous n\'avez pas d\'application de réveil compatible avec cette application. Pour pouvoir créer un réveil automatique, vous devez télécharger une application compatible telle que <a href="https://market.android.com/details?id=com.vp.alarmClockPlusDock">Alarm Clock Plus</a></string>
+    <string name="no_alarm_message">Vous n\'avez pas d\'application de réveil compatible avec cette application. Pour pouvoir créer un réveil automatique, vous devez télécharger une application compatible telle que <a href="market://details?id=com.vp.alarmClockPlusDock">Alarm Clock Plus</a></string>
     <string name="download_alarm_app">Aller au market</string>
 </resources>
