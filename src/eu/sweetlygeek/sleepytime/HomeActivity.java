@@ -76,21 +76,21 @@ public class HomeActivity extends Activity {
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
-			case TIME_PICKER_DIALOG:
-				String language = Locale.getDefault().getLanguage();
-				boolean is24h = Locale.FRENCH.getLanguage().equals(language);
-				return new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+		case TIME_PICKER_DIALOG:
+			String language = Locale.getDefault().getLanguage();
+			boolean is24h = Locale.FRENCH.getLanguage().equals(language);
+			return new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
 
-					@Override
-					public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-						Calendar calendar = Calendar.getInstance();
-						calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-						calendar.set(Calendar.MINUTE, minute);
-						goToNext(calendar.getTime(), choice);
-					}
-				}, 0, 0, is24h);
-			case ABOUT_DIALOG:
-				return new AlertDialog.Builder(this).setTitle(R.string.about).setMessage(R.string.about_text).create();
+				@Override
+				public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+					Calendar calendar = Calendar.getInstance();
+					calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+					calendar.set(Calendar.MINUTE, minute);
+					goToNext(calendar.getTime(), choice);
+				}
+			}, 0, 0, is24h);
+		case ABOUT_DIALOG:
+			return new AlertDialog.Builder(this).setTitle(R.string.about).setMessage(R.string.about_text).create();
 		}
 		return null;
 	}
@@ -99,6 +99,8 @@ public class HomeActivity extends Activity {
 		Intent i = new Intent(this, ResultsActivity.class);
 		i.putExtra(SleepUtils.DATE_PARAM, date);
 		i.putExtra(SleepUtils.CHOICE_PARAM, choice);
-		startActivity(i);
+		if (i != null && choice != null) {
+			startActivity(i);
+		}
 	}
 }
